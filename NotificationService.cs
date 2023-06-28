@@ -45,7 +45,7 @@ namespace Application.Shared.Services.Concrete
         /// <returns>Task</returns>
         public async Task ProcessPendingNotificationsAsync()
         {
-            var notifications = this.notificationRepository.Query(x => x.Status == NotificationStatus.Pending).Take(100).ToList();
+            var notifications = this.notificationRepository.Query(x => x.Status == NotificationStatus.Pending).ToList();
 
             foreach (var notification in notifications)
             {
